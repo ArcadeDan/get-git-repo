@@ -12,7 +12,7 @@ if __name__ == "__main__":
     repoURL = ('https://api.github.com/users/' + user) + '/repos'
     html = urlopen(repoURL).read().decode('utf-8')
     repoJSON = json.loads(html)
-    file = open("repos.txt", "w")
+    file = open("{}.txt".format(user), "w")
     for url in repoJSON:
        file.write("{}".format(url["html_url"] + ".git" + "\n"))
 
